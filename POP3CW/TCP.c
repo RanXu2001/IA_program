@@ -13,9 +13,8 @@ int sock;
 struct sockaddr_in serverSockAddr; /* server address */
 struct sockaddr_in clientSockAddr; /* client address */
 
-char sendBuff[255];
-char rcvBuff[255];
-
+char sendBuff[20000];
+char rcvBuff[20000];
 
 char servIP[64];
 char servDomainName[64];
@@ -95,7 +94,7 @@ int main(){
     printf("%s",rcvBuff);
     memset(rcvBuff,0,sizeof(rcvBuff));
 
-    sendToServer("USER IA_pop3_client");
+    sendToServer("USER IA_pop3_client@163.com");
     rcvFromServer();
     printf("%s",rcvBuff);
     memset(rcvBuff,0,sizeof(rcvBuff));

@@ -1,13 +1,14 @@
 1.	建立TCP连接
 2.	Void ChooseFunction()显示所有能选的选项，并且根据选中的东西调用相关函数。
-3.	Void getList()
-4.	Void getMailStatus()
-5.	Void displayDetail()
-6.	Void search()
-7.	Void displayBySubjects()
-8.	Void downloadDelete()
-9.  void nextStep()
-10.
+3.	Void getList()               远端
+4.	Void getMailStatus()         远端
+5.	Void displayDetail()         远端                        xr
+6.	Void search()                本地                        lyc
+7.	Void displayBySubjects()     本地                        lyc
+8.	Void downloadDelete()                                   xr
+9.  void nextStep()                                        lyc
+10. void quit()                                            xr
+11. void login()                      connect和登录         xr
 
 
 
