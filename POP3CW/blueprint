@@ -1,0 +1,30 @@
+1.	建立TCP连接
+2.	Void ChooseFunction()显示所有能选的选项，并且根据选中的东西调用相关函数。
+3.	Void getList()
+4.	Void getMailStatus()
+5.	Void displayDetail()
+6.	Void search()
+7.	Void displayBySubjects()
+8.	Void downloadDelete()
+9.  void nextStep()
+10.
+
+
+
+tasks
+搞清楚每个命令的回复格式
+在接受到的返回消息后面加空字符
+
+
+数据结构
+本次的domain name
+本次的password
+本次的username
+
+
+
+
+include....
+
+for(){//loop forever
+}
