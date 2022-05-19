@@ -1,0 +1,3 @@
+C:/Users/16003/Documents/GitHub/IA_program/cmake-build-debug/CMakeFiles/IA_program.dir
+C:/Users/16003/Documents/GitHub/IA_program/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/16003/Documents/GitHub/IA_program/cmake-build-debug/CMakeFiles/rebuild_cache.dir
