@@ -1,68 +1,42 @@
-+OK 3021 octets
-Received: from xmbgsz5.mail.qq.com (unknown [113.108.92.46])
-        by mx82 (Coremail) with SMTP id rt1pCgCXyVCpj4diZ0LTDg--.31154S3;
-        Fri, 20 May 2022 20:55:05 +0800 (CST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=qq.com; s=s201512;
-        t=1653051305; bh=Ap5jHZuESo5NMYjO8ldEy0RL+KkGkW8At4W+XHBg8U0=;
-        h=From:To:Subject:Date;
-        b=juVBnFMeAGWzoLu/UErcSmu/RvFmPPp3w3y4/4EBgCLMHLOOjTXZ8aNPorIkYilmW
-         hVPHef2FfGe4i/lxs4jbcM4XTOxo1PcKZ6SMbZt67cTG7x+yrToVbcLTn8OkcxGpYE
-         P1hl8uLkS3dhWUvTxRsHREQu9tcFlXnEQFoG9e2U=
-X-QQ-FEAT: +BBVktQ4OjZ/vG3KZFC7le/PYKCmnP34
-X-QQ-SSF: 0000000000000040000000000000
-X-QQ-XMAILINFO: ORZg58rC7KFyDgk3OELafNe8cgxVRi86Byl8yn7H55TsP+6LRo34p9RC0SFsZG
-         BIzohYM3Su/O010uK/Itfu8PD+gXt/D0NZ9xWw/2pr3MkHMRUEVs2OXkDGLYX2KHc7V3fuDzYNW+R
-         MzPpKBNTKvZWB8WYnLjRtwHR+RbyL0RBbh15XkOHssaiUOnwP6Znv5Ae6dzDBczUAuFaSCClaq2mu
-         73/5r72P4IDPUWw6dw3V+ko27wU+L7DFtRem9HYIgbbTGt8tLelpLLHQr8I61MFIaVNqhuxXbuAsz
-         WgNqzuB6LKqKzQ/2aq6hmh6zs/ZaJSxsy6dLcRY4itAn93r+ihuJFzFDqth2Rga2/OotSXA9lxyy+
-         C9igYVbZNT4obF9qOw8mnZadJVGvtvqXUTrrn9PfOhviMFG/jw33y+oMM9SYDnAk+k1a6C8iCvx/k
-         GWum+gvhXAzsBOiCi6dr2kxQwQgpNqHDYx0DQkgeKVf0iS+CR7lOlNFHeKCrmCpceySAOQqXOfo3M
-         43l6FB9fZQFm2KKe0x+KiYcvqNKssEij4XxWzRRnY2klB1w7RJ/EmMNO97SfqgMvgoRSYgdR7FPLe
-         L/PAIn4zlCuWeBuYjN/xBSttNKxXtHl/y5sUseGHFTtV8xJvTUWcK6cVBVZ0GEs20/7smMRb1vRNW
-         XdKxh/GsdbVEUIpF26wwnODGG3df0M/oerFeNyhttYTu/1kPeG+92wz13I6DSVlrbFwWaMDnrWehF
-         on2VZBGsEoG1qlVSNCTiC+pRNZhBSI9u+cf8e8GxHsfQevZ6J4pX7LP/aISMBjhDdXHjwOdgK3IuW
-         DBSQSkEXg1+EZWaPbV7ogUdJtp7MNsrVltv0+Cbs6+wdMJsW5DhmxvUFXndXMGLZio/pihifvNHTG
-         7tQ01NrjAU=
-X-HAS-ATTACH: no
++OK 1665 octets
+Received: from qq.com (unknown [59.36.132.57])
+        by mx78 (Coremail) with SMTP id MN1pCgAXs9_1r4diYEUaDg--.36085S3;
+        Fri, 20 May 2022 23:12:54 +0800 (CST)
+X-QQ-GoodBg: 2
+X-QQ-SSF: 00400000000000F0
+X-QQ-FEAT: mkWb2W19bxe99mS+YZlusLA6MjNLFCwIi3rrvGGilnxmuzvRpWKFNPLmUHn/d
+        U1mhDmJbhWIJPiNr07+PRHPBLP9wWCHorffYZ44ymgn7nOv95t10v6u9+B27QKGtzGRgpbn
+        f/hyyzVHS//4usaeGrTGJjcoBHs1oVKZjVtInMOFMgJY2cmgLT91agLUorDQGKdTDmccN++
+        5vu9Ik2UJR+zg/mXOjnfFYvkMCLBOLuiVECt4/42WncaN1wDGEFqvqjb7GgfvUXXFgoqw54
+        LDQtVATM+Q5Zn+biNIUSJlxoG53eaQemWptv87kEzxekLTjs1zqPGj599lbTeGEeBVvnWZY
+        m9/xTlb/to5rh7vfXLP+1qzTW795Q==
 X-QQ-BUSINESS-ORIGIN: 2
-X-Originating-IP: 255.150.144.104
+X-Originating-IP: 221.219.50.181
 X-QQ-STYLE:
-X-QQ-mid: webmail427t1653051305t7168406
-From: "=?ISO-8859-1?B?MTYwMDM3ODg3OA==?=" <1600378878@qq.com>
+X-QQ-mid: llogic71t1653059571t57041
+From: "=?ISO-8859-1?B?MjAxOTIxMzAzOQ==?=" <2019213039@bupt.edu.cn>
 To: "=?ISO-8859-1?B?aWFfcG9wM19jbGllbnQ=?=" <ia_pop3_client@163.com>
 Subject: TEST 2
 Mime-Version: 1.0
-Content-Type: multipart/alternative;
-        boundary="----=_NextPart_62878FA8_1245D668_48BB3DC6"
-Content-Transfer-Encoding: 8Bit
-Date: Fri, 20 May 2022 20:55:04 +0800
-X-Priority: 3
-Message-ID: <tencent_78EAF1A2E2631DF0003AA6B90E8804DEDE06@qq.com>
-X-QQ-MIME: TCMime 1.0 by Tencent
-X-Mailer: QQMail 2.x
-X-QQ-Mailer: QQMail 2.x
-X-CM-TRANSID:rt1pCgCXyVCpj4diZ0LTDg--.31154S3
-Authentication-Results: mx82; spf=pass smtp.mail=1600378878@qq.com; dk
-        im=pass header.i=@qq.com
-X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
-        VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxUsiihDUUUU
-
-This is a multi-part message in MIME format.
-
-------=_NextPart_62878FA8_1245D668_48BB3DC6
 Content-Type: text/plain;
         charset="ISO-8859-1"
 Content-Transfer-Encoding: base64
+Date: Fri, 20 May 2022 23:12:51 +0800
+X-Priority: 3
+Message-ID: <tencent_0ED4A3FA6E3A4F3D7105C3CE@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-SENDSIZE: 520
+Received: from qq.com (unknown [127.0.0.1])
+        by smtp.qq.com (ESMTP) with SMTP
+        id ; Fri, 20 May 2022 23:12:52 +0800 (CST)
+Feedback-ID: llogic:bupt.edu.cn:qybgweb:qybgweb18
+X-CM-TRANSID:MN1pCgAXs9_1r4diYEUaDg--.36085S3
+Authentication-Results: mx78; spf=none smtp.mail=2019213039@bupt.edu.c
+        n;
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+        VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxUatxhDUUUU
 
-VGhpcyBpcyB0ZXN0IDI=
-
-------=_NextPart_62878FA8_1245D668_48BB3DC6
-Content-Type: text/html;
-        charset="ISO-8859-1"
-Content-Transfer-Encoding: base64
-
-PG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNo
-YXJzZXQ9R0IxODAzMCI+PGRpdj5UaGlzIGlzIHRlc3QgMjwvZGl2Pg==
-
-------=_NextPart_62878FA8_1245D668_48BB3DC6--
+VGhpcyBpcyB0ZXN0MiwgYWxzbyBhIHBsYWluIG1haWwu
 .
