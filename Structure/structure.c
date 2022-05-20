@@ -8,6 +8,9 @@
 #include <time.h>
 
 
+struct Email{
+
+};
 
 void Displaymainmenu();//显示主菜单
 int getList();//Get a list of messages and sizes  success:0,fail:-1
@@ -19,6 +22,9 @@ int downloadDelete();//Download the mail and delete in the remote service       
 int quit();//Quit                                 success:0,fail:-1
 void nextStep();//show next step
 int login();//get in the pop.163.com              success:0,fail:-1
+
+//我认为需要的
+struct Email decoder(char[100]); //输入相对路径解码Email文件
 
 int main()
 {
@@ -168,4 +174,8 @@ int getMailStatus(){
 int getList(){
     printf("This is getList.\n");
     return 0;
+}
+
+struct Email decoder(char[100]){
+
 }
