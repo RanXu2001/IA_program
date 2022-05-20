@@ -21,7 +21,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Structure/em1.eml" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/em1.eml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Structure/em2.eml" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/em2.eml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structure/structure.c" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/structure.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <workItem from="1652942182450" duration="61000" />
       <workItem from="1653029532652" duration="2080000" />
       <workItem from="1653035253226" duration="8388000" />
-      <workItem from="1653050267375" duration="1500000" />
+      <workItem from="1653050267375" duration="2548000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1652941919080</created>
@@ -139,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653050519426</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="本地邮箱已下载">
+      <created>1653051786095</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653051786095</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

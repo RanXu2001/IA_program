@@ -51,14 +51,14 @@ This is a multi-part message in MIME format.
 
 ------=_NextPart_62878FA8_1245D668_48BB3DC6
 Content-Type: text/plain;
-        charset="GB2312"
+        charset="ISO-8859-1"
 Content-Transfer-Encoding: base64
 
 VGhpcyBpcyB0ZXN0IDI=
 
 ------=_NextPart_62878FA8_1245D668_48BB3DC6
 Content-Type: text/html;
-        charset="GB2312"
+        charset="ISO-8859-1"
 Content-Transfer-Encoding: base64
 
 PG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNo
