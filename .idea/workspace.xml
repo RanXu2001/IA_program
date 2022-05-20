@@ -17,11 +17,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5cc595-3cdc-4ea7-8f3f-a68ff88ea43d" name="Changes" comment="menu ok">
-      <change afterPath="$PROJECT_DIR$/Structure/em1.eml" afterDir="false" />
+    <list default="true" id="4e5cc595-3cdc-4ea7-8f3f-a68ff88ea43d" name="Changes" comment="本地邮箱已下载">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structure/ranxu.eml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structure/em1.eml" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/em1.eml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structure/em2.eml" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/em2.eml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structure/structure.c" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/structure.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,7 @@
       <workItem from="1652942182450" duration="61000" />
       <workItem from="1653029532652" duration="2080000" />
       <workItem from="1653035253226" duration="8388000" />
-      <workItem from="1653050267375" duration="45000" />
+      <workItem from="1653050267375" duration="1500000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1652941919080</created>
@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653040608822</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="本地邮箱已下载">
+      <created>1653050519426</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653050519426</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +160,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="1" />
     <MESSAGE value="menu ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="menu ok" />
+    <MESSAGE value="本地邮箱已下载" />
+    <option name="LAST_COMMIT_MESSAGE" value="本地邮箱已下载" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

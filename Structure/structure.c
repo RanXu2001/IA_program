@@ -9,7 +9,7 @@
 
 
 struct Email{
-
+    char subject[50];
 };
 
 void Displaymainmenu();//显示主菜单
