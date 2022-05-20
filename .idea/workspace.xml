@@ -78,12 +78,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="IA_program" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="IA_program" TARGET_NAME="IA_program" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="IA_program" RUN_TARGET_NAME="IA_program">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IA_program" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="IA_program" TARGET_NAME="IA_program" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="IA_program" RUN_TARGET_NAME="IA_program">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -99,7 +99,8 @@
       <updated>1652941674729</updated>
       <workItem from="1652941677565" duration="389000" />
       <workItem from="1652942182450" duration="61000" />
-      <workItem from="1653029532652" duration="2057000" />
+      <workItem from="1653029532652" duration="2080000" />
+      <workItem from="1653035253226" duration="5293000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1652941919080</created>
@@ -122,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653030933924</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1">
+      <created>1653031663150</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653031663150</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
