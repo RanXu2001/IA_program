@@ -17,11 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e5cc595-3cdc-4ea7-8f3f-a68ff88ea43d" name="Changes" comment="本地邮箱已下载">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structure/em1.eml" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/em1.eml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structure/em2.eml" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/em2.eml" afterDir="false" />
-    </list>
+    <list default="true" id="4e5cc595-3cdc-4ea7-8f3f-a68ff88ea43d" name="Changes" comment="本地邮箱已下载" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,6 +91,7 @@
       <workItem from="1653029532652" duration="2080000" />
       <workItem from="1653035253226" duration="8388000" />
       <workItem from="1653050267375" duration="2548000" />
+      <workItem from="1653054476968" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1652941919080</created>
