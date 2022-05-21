@@ -67,17 +67,17 @@ int connectToServer(){//成功返回0，失败返-1
         printf("Connect to server successfully!\n");
     return 1;
 }
-void sendToServer(char *message){
+int sendToServer(char *message){
     //sendBuff = message;
-    if(send(sock,message,sizeof (message),0)!=sizeof (message)){
-        printf("Send an unexpected number of bytes\n");
+    if(send(sock,message,strlen(message),0)==-1){
+        return -1;
     }
-    printf("Successfully send %s",message);
+    return 0;
 
 }
-void rcvFromServer(){
-    recv(sock,rcvBuff,sizeof (rcvBuff),0);
-    rcvBuff[255] = '\0';
+int rcvFromServer(){
+    return  recv(sock,rcvBuff,sizeof (rcvBuff),0);
+
 }
 
 int isSuccessful(char* str){
@@ -87,27 +87,150 @@ int isSuccessful(char* str){
     else
         return 0;
 }
+
+int anythingRecieved(int charNum){////-1:receive error   0:no received message    1:normal
+    if(charNum == -1){
+        return -1;
+    }
+    if(charNum == 0){
+        return 0;
+    }
+    return 1;
+}
+
+int sendReceive(char* str){//return:-1:receive error   0:receive nothing   1:success   2:return -ERR
+    sendToServer(str);
+    int i = rcvFromServer();
+    if(anythingRecieved(i) <=0)
+        return anythingRecieved(i);
+    else
+    {
+        if(isSuccessful(rcvBuff)==0)
+            return 1;
+        else
+            return 2;
+    }
+}
+
+////////////////////////////////////after login and getlist and functions who set rcvBuff, clear buff with memset(rcvBuff,0,sizeof(rcvBuff));
+///login after connection finished, automatically login.
+int login(){
+    sendReceive("USER IA_pop3_client\n");
+    memset(rcvBuff,0,sizeof(rcvBuff));
+    sendReceive("PASS NHRIWKBTQGCWGIUB\n");
+}
+
+int getList(){//////return:-1:receive error   0:receive nothing   1:success   2:return -ERR
+    sendReceive("LIST\n");
+}
+int getMailStatus(){//////return:-1:receive error   0:receive nothing   1:success   2:return -ERR
+    sendReceive("STAT\n");
+}
+int getMailDetail(char *i){///usage: getMailDetail("1\n")
+    char str[100]="RETR ";
+    strcat(str, i);
+    sendReceive(str);
+}
+
+int downloadDelete(char *i){////first reterive, then store
+    int v = getMailDetail(i);
+
+    char str[100]="DELE ";
+    strcat(str, i);
+
+    if(v!=1)
+        return v;
+    else{
+        FILE *fp;
+        fp = fopen("test.eml","w+");///////the name here must match the mail user selects
+        fprintf(fp,"%s",rcvBuff);
+        fclose(fp);
+
+        memset(rcvBuff,0,sizeof(rcvBuff));
+        sendReceive(str);
+    }
+}
+int reset(){
+    sendReceive("RSET\n");
+}
+
+int quit(){
+    sendReceive("QUIT\n");
+}
+
+
 int main(){
 
     connectToServer();
     rcvFromServer();
     printf("%s",rcvBuff);
     memset(rcvBuff,0,sizeof(rcvBuff));
+    switch (login())
+    {
+        case 0:
+            printf("nothing returned from server\n");
+            break;
 
-    sendToServer("USER IA_pop3_client@163.com");
-    rcvFromServer();
-    printf("%s",rcvBuff);
+        case -1:
+            printf("receive error\n");
+            break;
+
+        case 1:
+            printf("successfully login!\n");
+            printf("%s",rcvBuff);
+            break;
+
+        case 2:
+            printf("return error\n");
+            break;
+
+        default:
+            break;
+    }
     memset(rcvBuff,0,sizeof(rcvBuff));
+    //downloadDelete("1\n");
+    quit();
+    //printf("%s",rcvBuff);
 
-//    if(isSuccessful(rcvBuff)==0)
-//        printf("login successful!");
-    //顺序不能错
+    // memset(rcvBuff,0,sizeof(rcvBuff));
 
-    sendToServer("PASS NHRIWKBTQGCWGIUB");
-    rcvFromServer();
-    printf("%s",rcvBuff);
-    memset(rcvBuff,0,sizeof(rcvBuff));
+//     switch (getList())
+//     {
+//     case 0:
+//         printf("nothing returned from server\n");
+//         break;
 
+//     case -1:
+//         printf("receive error\n");
+//         break;
+
+//     case 1:
+//         printf("%s",rcvBuff);
+//         break;
+
+// }
+    // memset(rcvBuff,0,sizeof(rcvBuff));
+    // switch (getMailDetail("1\n"))
+    // {
+    // case 0:
+    //     printf("nothing returned from server\n");
+    //     break;
+
+    // case -1:
+    //     printf("receive error\n");
+    //     break;
+
+    // case 1:
+    //     printf("%s",rcvBuff);
+    //     break;
+
+    // case 2:
+    //     printf("return error\n");
+    //     break;
+
+    // default:
+    //     break;
+    // }
     //
 
 }
