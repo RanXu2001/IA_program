@@ -26,18 +26,18 @@ int login();//get in the pop.163.com              success:0,fail:-1
 
 //我认为需要的
 //struct Email decoder(char[100]); //输入相对路径解码Email文件
-void decoder(char[100]);
-int main()
+void decoder(char *arg);
+int main(int argc,char *argv[])
 {
-    //测试decoder
-    decoder( 'em1.eml');
+    decoder(argv[1]);
+    system("pause");
     //TCP链接
 
     //login
     if(login() < 0)
         printf("login() fail.\n");
     //Display main menu
-    Displaymainmenu();
+    //Displaymainmenu();
     return 0;
 }
 void Displaymainmenu()//显示主菜单
@@ -197,7 +197,7 @@ int getList(){
     fclose(fp1);
 }*/
 
-void decoder(char path[100]){
+void decoder(char *path){
     int fileHang(FILE *fp);
 
     int flag;
