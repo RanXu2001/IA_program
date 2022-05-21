@@ -1,0 +1,42 @@
++OK 1665 octets
+Received: from qq.com (unknown [59.36.132.57])
+        by mx78 (Coremail) with SMTP id MN1pCgAXs9_1r4diYEUaDg--.36085S3;
+        Fri, 20 May 2022 23:12:54 +0800 (CST)
+X-QQ-GoodBg: 2
+X-QQ-SSF: 00400000000000F0
+X-QQ-FEAT: mkWb2W19bxe99mS+YZlusLA6MjNLFCwIi3rrvGGilnxmuzvRpWKFNPLmUHn/d
+        U1mhDmJbhWIJPiNr07+PRHPBLP9wWCHorffYZ44ymgn7nOv95t10v6u9+B27QKGtzGRgpbn
+        f/hyyzVHS//4usaeGrTGJjcoBHs1oVKZjVtInMOFMgJY2cmgLT91agLUorDQGKdTDmccN++
+        5vu9Ik2UJR+zg/mXOjnfFYvkMCLBOLuiVECt4/42WncaN1wDGEFqvqjb7GgfvUXXFgoqw54
+        LDQtVATM+Q5Zn+biNIUSJlxoG53eaQemWptv87kEzxekLTjs1zqPGj599lbTeGEeBVvnWZY
+        m9/xTlb/to5rh7vfXLP+1qzTW795Q==
+X-QQ-BUSINESS-ORIGIN: 2
+X-Originating-IP: 221.219.50.181
+X-QQ-STYLE:
+X-QQ-mid: llogic71t1653059571t57041
+From: "=?ISO-8859-1?B?MjAxOTIxMzAzOQ==?=" <2019213039@bupt.edu.cn>
+To: "=?ISO-8859-1?B?aWFfcG9wM19jbGllbnQ=?=" <ia_pop3_client@163.com>
+Subject: TEST 2
+Mime-Version: 1.0
+Content-Type: text/plain;
+        charset="ISO-8859-1"
+Content-Transfer-Encoding: base64
+Date: Fri, 20 May 2022 23:12:51 +0800
+X-Priority: 3
+Message-ID: <tencent_0ED4A3FA6E3A4F3D7105C3CE@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-SENDSIZE: 520
+Received: from qq.com (unknown [127.0.0.1])
+        by smtp.qq.com (ESMTP) with SMTP
+        id ; Fri, 20 May 2022 23:12:52 +0800 (CST)
+Feedback-ID: llogic:bupt.edu.cn:qybgweb:qybgweb18
+X-CM-TRANSID:MN1pCgAXs9_1r4diYEUaDg--.36085S3
+Authentication-Results: mx78; spf=none smtp.mail=2019213039@bupt.edu.c
+        n;
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+        VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxUatxhDUUUU
+
+VGhpcyBpcyB0ZXN0MiwgYWxzbyBhIHBsYWluIG1haWwu
+.
