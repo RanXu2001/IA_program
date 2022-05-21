@@ -30,6 +30,7 @@ void decoder();
 int main()
 {
     decoder();
+    system("Pause");
     //TCP链接
 
     //login
@@ -37,7 +38,7 @@ int main()
         printf("login() fail.\n");
     //Display main menu
 
-    Displaymainmenu();
+    //Displaymainmenu();
     return 0;
 }
 void Displaymainmenu()//显示主菜单
@@ -203,7 +204,7 @@ void decoder(){
     int flag;
     char ch;
     //char f1 = "lala.txt";
-    FILE *fp1 = fopen("./lala.txt","r");
+    FILE *fp1 = freopen("./lala.txt","r",stdin);
     if(fp1 == NULL){
         printf("Error occur when opening file");
     }
@@ -211,6 +212,5 @@ void decoder(){
     while ((ch = fgetc(fp1)) != EOF){
         printf("%c",ch);
     }
-    system("pause");
     fclose(fp1);
 }
