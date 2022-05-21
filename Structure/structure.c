@@ -118,49 +118,88 @@ void Displaymainmenu()//显示主菜单
         scanf("%d",&choice);
         switch(choice) {
             case 1:{
-                if(getList() < 0)
-                    printf("getList() fail.\n");
+                switch (getList())
+                {
+                    case 0:
+                        printf("nothing returned from server\n");
+                        break;
+
+                    case -1:
+                        printf("receive error\n");
+                        break;
+
+                    case 1:
+                        printf("%s",rcvBuff);
+                        break;
+
+                }
+                memset(rcvBuff,0,sizeof(rcvBuff));
                 break;
             }
 
             case 2:{
-                if(getMailStatus() < 0)
-                    printf("getMailStatus() fail.\n");
+                switch(getMailStatus()){
+                    case -1:
+                        printf("receive error\n");
+                        break;
+                    case 0:
+                        printf("nothing returned from server\n");
+                        break;
+                    case 1:
+                        printf("%s",rcvBuff);
+                        break;
+                    case 2:
+                        printf("input parameter fault\n");
+                        break;
+                }
+                memset(rcvBuff,0,sizeof(rcvBuff));
                 break;
             }
 
             case 3:{
-                if(getMailDetail() < 0)
-                    printf("displayDetail() fail.\n");
+                int input = 0;
+                printf("Please select the mail number you want to view:\n");
+                scanf("%d",& input);
+                if(getMailDetail(input) < 0)
+                    printf("getMailDetail() fail.\n");
+                memset(rcvBuff,0,sizeof(rcvBuff));
                 break;
             }
 
             case 4:{
                 if(search() < 0)
                     printf("search() fail.\n");
+                memset(rcvBuff,0,sizeof(rcvBuff));
                 break;
             }
 
             case 5:{
                 if(displayBySubjects() < 0)
                     printf("displayBySubjects() fail.\n");
+                memset(rcvBuff,0,sizeof(rcvBuff));
                 break;
             }
 
             case 6:{
-                if(downloadDelete() < 0)
+                int input = 0;
+                printf("Please select the mail number you want to download:\n");
+                scanf("%d",& input);
+                if(downloadDelete(input) < 0)
                     printf("downloadDelete() fail.\n");
+                memset(rcvBuff,0,sizeof(rcvBuff));
                 break;
             }
 
             case 7:{
                 if(quit() < 0)
                     printf("quit() fail.\n");
+                memset(rcvBuff,0,sizeof(rcvBuff));
                 exit(0);
             }
 
             default:{//仅限数字
                 printf("The correct option was not detected.\n");
+                memset(rcvBuff,0,sizeof(rcvBuff));
                 break;
             }
         }
@@ -319,12 +358,16 @@ int downloadDelete(char *i){
 }
 
 int displayBySubjects(){
-    printf("This is displayBySubjects.\n");
+    int v = readFlie("em1.eml");
+    printf("%s",fileBuff);
+    printf("\n%d bytes are read\n",v);
     return 0;
 }
 
 int search(){
-    printf("This is search.\n");
+    int v = readFlie("em1.eml");
+    printf("%s",fileBuff);
+    printf("\n%d bytes are read\n",v);
     return 0;
 }
 
