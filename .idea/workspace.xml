@@ -19,7 +19,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5cc595-3cdc-4ea7-8f3f-a68ff88ea43d" name="Changes" comment="本地邮箱已下载">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Structure/lala.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lala.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Structure/structure.c" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/structure.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
@@ -110,7 +109,7 @@
       <workItem from="1653106237667" duration="342000" />
       <workItem from="1653106930520" duration="733000" />
       <workItem from="1653108219466" duration="242000" />
-      <workItem from="1653108771114" duration="484000" />
+      <workItem from="1653108771114" duration="697000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1652941919080</created>
@@ -161,7 +160,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653051786095</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="本地邮箱已下载">
+      <created>1653109292248</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653109292248</updated>
+    </task>
+    <task id="LOCAL-00009" summary="本地邮箱已下载">
+      <created>1653109419773</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653109419773</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

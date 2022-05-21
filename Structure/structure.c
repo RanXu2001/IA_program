@@ -29,7 +29,9 @@ int login();//get in the pop.163.com              success:0,fail:-1
 void decoder();
 int main()
 {
+    int i;
     decoder();
+    scanf("%d",i);
     system("Pause");
     //TCP链接
 
@@ -208,7 +210,6 @@ void decoder(){
     if(fp1 == NULL){
         printf("Error occur when opening file");
     }
-
     while ((ch = fgetc(fp1)) != EOF){
         printf("%c",ch);
     }
