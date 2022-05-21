@@ -19,6 +19,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e5cc595-3cdc-4ea7-8f3f-a68ff88ea43d" name="Changes" comment="本地邮箱已下载">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Structure/lala.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lala.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Structure/structure.c" beforeDir="false" afterPath="$PROJECT_DIR$/Structure/structure.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
@@ -55,32 +56,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/16003/Documents/GitHub/IA_program/Structure&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "C:/Users/16003/Documents/GitHub/IA_program/Structure",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\16003\Documents\GitHub\IA_program\Structure" />
       <recent name="C:\Users\16003\Documents\GitHub\IA_program\POP3CW" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\16003\Documents\GitHub\IA_program\cmake-build-debug" />
+    </key>
   </component>
   <component name="RunManager">
-    <configuration name="IA_program" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="true" WORKING_DIR="file://$PROJECT_DIR$/Structure" PASS_PARENT_ENVS_2="true" PROJECT_NAME="IA_program" TARGET_NAME="IA_program" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="IA_program" RUN_TARGET_NAME="IA_program">
+    <configuration name="IA_program" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="IA_program" TARGET_NAME="IA_program" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="IA_program" RUN_TARGET_NAME="IA_program">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -105,6 +110,7 @@
       <workItem from="1653106237667" duration="342000" />
       <workItem from="1653106930520" duration="733000" />
       <workItem from="1653108219466" duration="242000" />
+      <workItem from="1653108771114" duration="484000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1652941919080</created>

@@ -30,14 +30,14 @@ void decoder();
 int main()
 {
     decoder();
-    system("pause");
     //TCP链接
 
     //login
     if(login() < 0)
         printf("login() fail.\n");
     //Display main menu
-    //Displaymainmenu();
+
+    Displaymainmenu();
     return 0;
 }
 void Displaymainmenu()//显示主菜单
@@ -202,10 +202,10 @@ void decoder(){
 
     int flag;
     char ch;
-    char f1 = "./lala.txt";
-    FILE *fp1 = fopen(f1,"r");
+    //char f1 = "lala.txt";
+    FILE *fp1 = fopen("./lala.txt","r");
     if(fp1 == NULL){
-        printf("Error occur when opening %s",f1);
+        printf("Error occur when opening file");
     }
 
     while ((ch = fgetc(fp1)) != EOF){
