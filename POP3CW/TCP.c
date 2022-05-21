@@ -5,9 +5,11 @@
 #include <string.h> /* for memset() */
 #include <unistd.h> /* for close() */
 #include <netdb.h>
+#include <fcntl.h>
 
-
+#define FILE_MODE 0777
 #define IP_LEN	64
+int fd;
 int sock;
 
 struct sockaddr_in serverSockAddr; /* server address */
@@ -15,6 +17,7 @@ struct sockaddr_in clientSockAddr; /* client address */
 
 char sendBuff[20000];
 char rcvBuff[20000];
+char fileBuff[20000];
 
 char servIP[64];
 char servDomainName[64];
@@ -158,6 +161,14 @@ int quit(){
     sendReceive("QUIT\n");
 }
 
+int readFlie(char* fliename){
+    if((fd = open(fliename,O_RDONLY,0))==-1)
+        return -1;
+
+    int i = read(fd,fileBuff,sizeof(fileBuff));
+    close(fd);
+    return i;
+}
 
 int main(){
 
@@ -188,28 +199,37 @@ int main(){
             break;
     }
     memset(rcvBuff,0,sizeof(rcvBuff));
-    //downloadDelete("1\n");
-    quit();
-    //printf("%s",rcvBuff);
+
+
+
+
+
 
     // memset(rcvBuff,0,sizeof(rcvBuff));
 
-//     switch (getList())
-//     {
-//     case 0:
-//         printf("nothing returned from server\n");
-//         break;
+    switch (getList())
+    {
+        case 0:
+            printf("nothing returned from server\n");
+            break;
 
-//     case -1:
-//         printf("receive error\n");
-//         break;
+        case -1:
+            printf("receive error\n");
+            break;
 
-//     case 1:
-//         printf("%s",rcvBuff);
-//         break;
+        case 1:
+            printf("%s",rcvBuff);
+            break;
 
-// }
-    // memset(rcvBuff,0,sizeof(rcvBuff));
+    }
+    memset(rcvBuff,0,sizeof(rcvBuff));
+
+    int v = readFlie("test.eml");
+    printf("%s",fileBuff);
+    printf("%d bytes are read",v);
+    // downloadDelete("1\n");
+
+    // printf("%s",rcvBuff);
     // switch (getMailDetail("1\n"))
     // {
     // case 0:
