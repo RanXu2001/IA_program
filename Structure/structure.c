@@ -10,6 +10,7 @@
 
 struct Email{
     char subject[50];
+    char content[1000];
 };
 
 void Displaymainmenu();//显示主菜单
@@ -176,6 +177,14 @@ int getList(){
     return 0;
 }
 
-struct Email decoder(char[100]){
+struct Email decoder(char path[100]){
+    int fileHang(FILE *fp);
 
+    int flag;
+    char ch;
+    char *f1 = path;
+    FILE *fp1 = fopen(f1,"r");
+    if(fp1 == NULL){
+        printf("Error occur when opening ")
+    }
 }

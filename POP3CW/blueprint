@@ -6,9 +6,9 @@
 6.	Void search()                本地                        lyc
 7.	Void displayBySubjects()     本地                        lyc
 8.	Void downloadDelete()                                   xr
-9.  void nextStep()                                        lyc
+9.  void nextStep()              ok                        lyc
 10. void quit()                                            xr
-11. void login()                      connect和登录         xr
+11. void login()              ``        connect和登录         xr
 
 
 
