@@ -25,10 +25,12 @@ void nextStep();//show next step
 int login();//get in the pop.163.com              success:0,fail:-1
 
 //我认为需要的
-struct Email decoder(char[100]); //输入相对路径解码Email文件
-
+//struct Email decoder(char[100]); //输入相对路径解码Email文件
+void decoder(char[100]);
 int main()
 {
+    //测试decoder
+    decoder( 'em1.eml');
     //TCP链接
 
     //login
@@ -177,7 +179,7 @@ int getList(){
     return 0;
 }
 
-struct Email decoder(char path[100]){
+/*struct Email decoder(char path[100]){
     int fileHang(FILE *fp);
 
     int flag;
@@ -185,6 +187,30 @@ struct Email decoder(char path[100]){
     char *f1 = path;
     FILE *fp1 = fopen(f1,"r");
     if(fp1 == NULL){
-        printf("Error occur when opening ")
+        printf("Error occur when opening %s",f1);
     }
+
+    while ((ch = fgetc(fp1)) != EOF){
+        printf("%c",ch);
+    }
+
+    fclose(fp1);
+}*/
+
+void decoder(char path[100]){
+    int fileHang(FILE *fp);
+
+    int flag;
+    char ch;
+    char *f1 = path;
+    FILE *fp1 = fopen(f1,"r");
+    if(fp1 == NULL){
+        printf("Error occur when opening %s",f1);
+    }
+
+    while ((ch = fgetc(fp1)) != EOF){
+        printf("%c",ch);
+    }
+
+    fclose(fp1);
 }
