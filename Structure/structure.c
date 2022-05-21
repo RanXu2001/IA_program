@@ -26,10 +26,10 @@ int login();//get in the pop.163.com              success:0,fail:-1
 
 //我认为需要的
 //struct Email decoder(char[100]); //输入相对路径解码Email文件
-void decoder(char *arg);
-int main(int argc,char *argv[])
+void decoder();
+int main()
 {
-    decoder(argv[1]);
+    decoder();
     system("pause");
     //TCP链接
 
@@ -197,12 +197,12 @@ int getList(){
     fclose(fp1);
 }*/
 
-void decoder(char *path){
+void decoder(){
     int fileHang(FILE *fp);
 
     int flag;
     char ch;
-    char *f1 = path;
+    char f1 = "./lala.txt";
     FILE *fp1 = fopen(f1,"r");
     if(fp1 == NULL){
         printf("Error occur when opening %s",f1);
@@ -211,6 +211,6 @@ void decoder(char *path){
     while ((ch = fgetc(fp1)) != EOF){
         printf("%c",ch);
     }
-
+    system("pause");
     fclose(fp1);
 }
