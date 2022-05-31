@@ -7,11 +7,10 @@
 #include <unistd.h> /* for close() */
 #include <fcntl.h>
 #include <dirent.h>
-#include <sys/types.h>
 
 FILE *f1;
 char fileBuff[20000];
-char subjectName[20000][20000];
+
 
 
 
@@ -37,19 +36,44 @@ int findsubject(char* fliename){
     return 0;
 }
 
+int is_in(char *wenben, char *search_word)
+{
+    int i = 0, j = 0, flag = -1;
+    while (i < strlen(wenben) && j < strlen(search_word))
+    {
+        if (wenben[i] == search_word[j])
+        { //如果字符相同则两个字符都增加
+            i++;
+            j++;
+        }
+        else
+        {
+            i = i - j + 1; //主串字符回到比较最开始比较的后一个字符
+            j = 0;         //字串字符重新开始
+        }
+        if (j == strlen(search_word))
+        {             //如果匹配成功
+            flag = 1; //字串出现
+            break;
+        }
+    }
+    return flag;
+}
+
 int selectAlleml(){
     struct dirent *p;
     //打开指定的文件夹
-    DIR *dirp=opendir("/.");
+    DIR *dirp=opendir("./");
     if(dirp==NULL){
         perror("opendir");
         return 1;
     }
-    printf("directory open success..\n");
+    //printf("directory open success..\n");
     while((p=readdir(dirp))!=NULL){
-        printf("%s\t%lu\n",\
-			p->d_name,p->d_ino);
-
+        if (is_in(p->d_name, ".eml") == 1) // 调用函数：参数二：比较文本，参数一：原文本
+        {
+            findsubject(p->d_name);
+        }
     }
     //关闭文件夹
     closedir(dirp);
@@ -57,7 +81,8 @@ int selectAlleml(){
 }
 
 int main(){
-    int v= findsubject("em1.eml");
-    printf(v);
+    //int v= findsubject("em1.eml");
+    //printf(v);
+    selectAlleml();
     return 0;
 }

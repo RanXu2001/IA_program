@@ -9,9 +9,11 @@
 #include <unistd.h> /* for close() */
 #include <netdb.h>
 #include <fcntl.h>
+#include <dirent.h>
 
 #define FILE_MODE 0777
 #define IP_LEN	64
+FILE *f1;
 int fd;
 int sock;
 
