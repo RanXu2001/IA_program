@@ -364,8 +364,7 @@ int downloadDelete(char *i){
 }
 
 int displayBySubjects(){
-    selectAllemlForTarget();
-    return 0;
+    return selectAllemlForTarget();
 }
 
 int search(){
@@ -455,13 +454,13 @@ int selectAllemlForTarget(){
     DIR *dirp=opendir("./");
     if(dirp==NULL){
         perror("opendir");
-        return 1;
+        return -1;
     }
     //printf("directory open success..\n");
     while((p=readdir(dirp))!=NULL){
         if (is_in(p->d_name, ".eml") == 1) // 调用函数：参数二：比较文本，参数一：原文本
         {
-            findsubject(p->d_name);
+            return findsubject(p->d_name);
         }
     }
     //关闭文件夹
