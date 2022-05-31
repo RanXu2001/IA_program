@@ -11,6 +11,8 @@ FILE *f1;
 char fileBuff[20000];
 char subjectName[20000][20000];
 
+
+
 int findsubject(char* fliename,char value[1024]){
     int len;
     char subject[1024]="Subject: ";
@@ -33,6 +35,10 @@ int findsubject(char* fliename,char value[1024]){
         //printf("%s %d \n",fileBuff,len - 1);
     }
     return 0;
+}
+
+int selectAlleml(){
+
 }
 
 int main(){
