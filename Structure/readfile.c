@@ -28,7 +28,7 @@ int findsubject(char* fliename,char value[1024]){
             //printf("%s\n",tsub);
             //char *data = strstr(fileBuff,subject);
             //printf("%s\n",data+9);
-            printf("find it!");
+            printf("The %s Mail's %s\n",fliename,&subject);
         }
         //printf("%s %d \n",fileBuff,len - 1);
     }
@@ -36,7 +36,7 @@ int findsubject(char* fliename,char value[1024]){
 }
 
 int main(){
-    int v= findsubject("em2.eml","TEST 1");
+    int v= findsubject("em1.eml","TEST 1");
     printf(v);
     return 0;
 }
