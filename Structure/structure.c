@@ -57,7 +57,9 @@ int sendReceive(char* );
 int reset();
 int readFlie(char* );
 int connectToServer();
-
+int findsubject(char*);
+int is_in(char *,char *);
+int selectAllemlForTarget();
 
 int main()
 {
@@ -362,9 +364,7 @@ int downloadDelete(char *i){
 }
 
 int displayBySubjects(){
-    int v = readFlie("em1.eml");
-    printf("%s",fileBuff);
-    printf("\n%d bytes are read\n",v);
+    selectAllemlForTarget();
     return 0;
 }
 
@@ -402,4 +402,69 @@ int readFlie(char* fliename){
     int i = read(fd,fileBuff,sizeof(fileBuff));
     close(fd);
     return i;
+}
+
+int findsubject(char* fliename){
+    int len;
+    char subject[9]="Subject: ";
+    if((f1 = fopen(fliename,"r"))== NULL)
+        return -1;
+
+    while(fgets(fileBuff,20000,f1) != NULL)
+    {
+        len = strlen(fileBuff);
+        fileBuff[len-1] = '\0';  /*去掉换行符*/
+        if(strncmp(fileBuff,subject,9) == 0){
+            //tsub = &fileBuff[9];
+            //printf("%s\n",tsub);
+            char *data = strstr(fileBuff,subject);
+            printf("The %s mail's subject is %s\n",fliename,data+9);
+        }
+        //printf("%s %d \n",fileBuff,len - 1);
+    }
+    return 0;
+}
+
+int is_in(char *wenben, char *search_word)
+{
+    int i = 0, j = 0, flag = -1;
+    while (i < strlen(wenben) && j < strlen(search_word))
+    {
+        if (wenben[i] == search_word[j])
+        { //如果字符相同则两个字符都增加
+            i++;
+            j++;
+        }
+        else
+        {
+            i = i - j + 1; //主串字符回到比较最开始比较的后一个字符
+            j = 0;         //字串字符重新开始
+        }
+        if (j == strlen(search_word))
+        {             //如果匹配成功
+            flag = 1; //字串出现
+            break;
+        }
+    }
+    return flag;
+}
+
+int selectAllemlForTarget(){
+    struct dirent *p;
+    //打开指定的文件夹
+    DIR *dirp=opendir("./");
+    if(dirp==NULL){
+        perror("opendir");
+        return 1;
+    }
+    //printf("directory open success..\n");
+    while((p=readdir(dirp))!=NULL){
+        if (is_in(p->d_name, ".eml") == 1) // 调用函数：参数二：比较文本，参数一：原文本
+        {
+            findsubject(p->d_name);
+        }
+    }
+    //关闭文件夹
+    closedir(dirp);
+    return 0;
 }
