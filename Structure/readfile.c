@@ -7,17 +7,18 @@
 #include <unistd.h> /* for close() */
 #include <fcntl.h>
 #include <dirent.h>
+#include <sys/types.h>
+
 FILE *f1;
 char fileBuff[20000];
 char subjectName[20000][20000];
 
 
 
-int findsubject(char* fliename,char value[1024]){
+
+int findsubject(char* fliename){
     int len;
-    char subject[1024]="Subject: ";
-    strcat(subject,value);
-    char *tsub;
+    char subject[9]="Subject: ";
     if((f1 = fopen(fliename,"r"))== NULL)
         return -1;
 
@@ -25,12 +26,11 @@ int findsubject(char* fliename,char value[1024]){
     {
         len = strlen(fileBuff);
         fileBuff[len-1] = '\0';  /*去掉换行符*/
-        if(strcmp(fileBuff,subject) == 0){
+        if(strncmp(fileBuff,subject,9) == 0){
             //tsub = &fileBuff[9];
             //printf("%s\n",tsub);
-            //char *data = strstr(fileBuff,subject);
-            //printf("%s\n",data+9);
-            printf("The %s Mail's %s\n",fliename,&subject);
+            char *data = strstr(fileBuff,subject);
+            printf("The %s Mail's %s\n",fliename,data+9);
         }
         //printf("%s %d \n",fileBuff,len - 1);
     }
@@ -38,11 +38,26 @@ int findsubject(char* fliename,char value[1024]){
 }
 
 int selectAlleml(){
+    struct dirent *p;
+    //打开指定的文件夹
+    DIR *dirp=opendir("/.");
+    if(dirp==NULL){
+        perror("opendir");
+        return 1;
+    }
+    printf("directory open success..\n");
+    while((p=readdir(dirp))!=NULL){
+        printf("%s\t%lu\n",\
+			p->d_name,p->d_ino);
 
+    }
+    //关闭文件夹
+    closedir(dirp);
+    return 0;
 }
 
 int main(){
-    int v= findsubject("em1.eml","TEST 1");
+    int v= findsubject("em1.eml");
     printf(v);
     return 0;
 }
