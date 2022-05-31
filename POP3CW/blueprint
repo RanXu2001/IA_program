@@ -4,9 +4,9 @@
 4.	Void getMailStatus()         远端
 5.	Void displayDetail()         远端                        xr
 6.	Void search()                本地                        lyc
-7.	Void displayBySubjects()     本地                        lyc
+7.	Void displayBySubjects()     本地         ok               lyc
 8.	Void downloadDelete()                                   xr
-9.  void nextStep()                                        lyc
+9.  void nextStep()                          ok                lyc
 10. void quit()                                            xr
 11. void login()                      connect和登录         xr
 
