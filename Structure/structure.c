@@ -69,11 +69,13 @@ int main()
     {
         case 0:
             printf("nothing returned from server\n");
-            break;
+            memset(rcvBuff,0,sizeof(rcvBuff));
+            exit(0);
 
         case -1:
             printf("receive error\n");
-            break;
+            memset(rcvBuff,0,sizeof(rcvBuff));
+            exit(0);
 
         case 1:
             printf("successfully login!\n");
@@ -82,10 +84,12 @@ int main()
 
         case 2:
             printf("return error\n");
-            break;
+            memset(rcvBuff,0,sizeof(rcvBuff));
+            exit(0);
 
         default:
-            break;
+            memset(rcvBuff,0,sizeof(rcvBuff));
+            exit(0);
     }
     memset(rcvBuff,0,sizeof(rcvBuff));
 
@@ -157,9 +161,9 @@ void Displaymainmenu()//显示主菜单
             }
 
             case 3:{
-                int input = 0;
+                char* input = NULL;
                 printf("Please select the mail number you want to view:\n");
-                scanf("%d",& input);
+                scanf("%s", input);
                 if(getMailDetail(input) < 0)
                     printf("getMailDetail() fail.\n");
                 memset(rcvBuff,0,sizeof(rcvBuff));
@@ -181,9 +185,9 @@ void Displaymainmenu()//显示主菜单
             }
 
             case 6:{
-                int input = 0;
+                char* input = NULL;
                 printf("Please select the mail number you want to download:\n");
-                scanf("%d",& input);
+                scanf("%s",input);
                 if(downloadDelete(input) < 0)
                     printf("downloadDelete() fail.\n");
                 memset(rcvBuff,0,sizeof(rcvBuff));
@@ -327,14 +331,12 @@ int sendReceive(char* str){//return:-1:receive error   0:receive nothing   1:suc
 
 int quit(){
     sendReceive("QUIT\n");
-    return 0;
 }
 
 int login(){
     sendReceive("USER IA_pop3_client\n");
     memset(rcvBuff,0,sizeof(rcvBuff));
     sendReceive("PASS NHRIWKBTQGCWGIUB\n");
-    return 0;
 }
 
 int downloadDelete(char *i){
@@ -375,17 +377,16 @@ int getMailDetail(char *i){
     char str[100]="RETR ";
     strcat(str, i);
     sendReceive(str);
-    return 0;
 }
 
 int getMailStatus(){
     sendReceive("STAT\n");
-    return 0;
+
 }
 
 int getList(){
     sendReceive("LIST\n");
-    return 0;
+
 }
 
 int reset(){
