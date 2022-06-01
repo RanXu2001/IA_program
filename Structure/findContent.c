@@ -77,7 +77,7 @@ void decodeMailFile(char* mailName){
     currentMail = strstr(currentMail,"\n");
     // p1=p3;
 
-    if(currentMail[0]=='\n' && !(currentMail[1]=='D' && currentMail[2]=='a' && currentMail[3]=='t' && currentMail[4]=='e' && currentMail[5]==':')){
+    if(currentMail[0]=='\n'){
         memmove(currentMail, currentMail+1, strlen(currentMail));
     }
     endOfCurrentMail = strstr(currentMail,"\n");
