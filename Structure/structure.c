@@ -32,10 +32,6 @@ int sendLength;
 
 const unsigned short servPort = 110;
 
-struct Email{
-    char subject[50];
-    char content[1000];
-};
 
 void Displaymainmenu();//显示主菜单
 int getList();//Get a list of messages and sizes  success:0,fail:-1
@@ -60,7 +56,8 @@ int connectToServer();
 int findsubject(char*);
 int is_in(char *,char *);
 int selectAllemlForTarget();
-
+int countFiles();
+unsigned char *base64_decode(unsigned char *code);
 int main()
 {
     //TCP链接
@@ -123,6 +120,7 @@ void Displaymainmenu()//显示主菜单
     printf("Please choose number:\n");
     do
     {
+        printf("mypop >");
         scanf("%d",&choice);
         switch(choice) {
             case 1:{
@@ -167,6 +165,7 @@ void Displaymainmenu()//显示主菜单
             case 3:{
                 char* input = NULL;
                 printf("Please select the mail number you want to view:\n");
+                printf("mypop >");
                 scanf("%s", input);
                 if(getMailDetail(input) < 0)
                     printf("getMailDetail() fail.\n");
@@ -191,6 +190,7 @@ void Displaymainmenu()//显示主菜单
             case 6:{
                 char* input = NULL;
                 printf("Please select the mail number you want to download:\n");
+                printf("mypop >");
                 scanf("%s",input);
                 if(downloadDelete(input) < 0)
                     printf("downloadDelete() fail.\n");
@@ -222,6 +222,7 @@ void nextStep(){
     printf("\n----------------------------------------------------------------------------\n");
     printf("Press 1 to return to main interface\n");
     printf("Press 2 to return to quit\n");
+    printf("mypop >");
     scanf("%d",&a);
     switch (a) {
         case 1 :{
@@ -258,6 +259,7 @@ int getIpFormDomainName(char* servDomainName, char* servIP, unsigned char ipLen)
 
 int connectToServer(){//成功返回0，失败返-1
     printf("Enter the domain name you want to connect:\n");
+    printf("mypop >");
     scanf("%s",servDomainName);
 
 
@@ -364,13 +366,7 @@ int downloadDelete(char *i){
 }
 
 int displayBySubjects(){
-    return selectAllemlForTarget();
-}
-
-int search(){
-    int v = readFlie("em1.eml");
-    printf("%s",fileBuff);
-    printf("\n%d bytes are read\n",v);
+    selectAllemlForTarget();
     return 0;
 }
 
@@ -460,7 +456,7 @@ int selectAllemlForTarget(){
     while((p=readdir(dirp))!=NULL){
         if (is_in(p->d_name, ".eml") == 1) // 调用函数：参数二：比较文本，参数一：原文本
         {
-            return findsubject(p->d_name);
+            findsubject(p->d_name);
         }
     }
     //关闭文件夹
@@ -468,7 +464,8 @@ int selectAllemlForTarget(){
     return 0;
 }
 
-int selectAllemlForDetial(){
+int countFiles(){
+    int fileCount=0;
     struct dirent *p;
     //打开指定的文件夹
     DIR *dirp=opendir("./");
@@ -477,13 +474,91 @@ int selectAllemlForDetial(){
         return -1;
     }
     //printf("directory open success..\n");
+    while((p=readdir(dirp))!=NULL) {
+        if (is_in(p->d_name, ".eml") == 1) // 调用函数：参数二：比较文本，参数一：原文本
+        {
+            fileCount++;
+        }
+    }
+    printf("you have %d mails\n", fileCount);
+    closedir(dirp);
+    return 0;
+}
+
+int search(){
+    int hasCount=0;
+    struct dirent *p;
+    char result[200] = "VGhpcyBpcyB0ZXN0MSwgdGhlIHBsYWluIHRleHQgbWFpbC4=";
+    char *content;
+    char search[2000];
+    printf("Please in put the text you want to search:\n");
+    printf("mypop >");
+    scanf("%s",search);
+    //打开指定的文件夹
+    DIR *dirp=opendir("./");
+    if(dirp==NULL){
+        perror("opendir");
+        return -1;
+    }
+    //printf("directory open success..\n");
+    countFiles();
     while((p=readdir(dirp))!=NULL){
         if (is_in(p->d_name, ".eml") == 1) // 调用函数：参数二：比较文本，参数一：原文本
         {
-            //return findsubject(p->d_name);
+            content = base64_decode(result);
+            if(is_in(content,search) == 1){
+                hasCount++;
+                printf("The mail of %s has the text.\n",p->d_name);
+            }
         }
     }
+    printf("There is(are) %d mail(s) including the text.\n",hasCount);
     //关闭文件夹
     closedir(dirp);
     return 0;
+}
+unsigned char *base64_decode(unsigned char *code)
+{
+//根据base64表，以字符找到对应的十进制数据
+    int table[]={0,0,0,0,0,0,0,0,0,0,0,0,
+                 0,0,0,0,0,0,0,0,0,0,0,0,
+                 0,0,0,0,0,0,0,0,0,0,0,0,
+                 0,0,0,0,0,0,0,62,0,0,0,
+                 63,52,53,54,55,56,57,58,
+                 59,60,61,0,0,0,0,0,0,0,0,
+                 1,2,3,4,5,6,7,8,9,10,11,12,
+                 13,14,15,16,17,18,19,20,21,
+                 22,23,24,25,0,0,0,0,0,0,26,
+                 27,28,29,30,31,32,33,34,35,
+                 36,37,38,39,40,41,42,43,44,
+                 45,46,47,48,49,50,51
+    };
+    long len;
+    long str_len;
+    unsigned char *res;
+    int i,j;
+
+//计算解码后的字符串长度
+    len=strlen(code);
+//判断编码后的字符串后是否有=
+    if(strstr(code,"=="))
+        str_len=len/4*3-2;
+    else if(strstr(code,"="))
+        str_len=len/4*3-1;
+    else
+        str_len=len/4*3;
+
+    res=malloc(sizeof(unsigned char)*str_len+1);
+    res[str_len]='\0';
+
+//以4个字符为一位进行解码
+    for(i=0,j=0;i < len-2;j+=3,i+=4)
+    {
+        res[j]=((unsigned char)table[code[i]])<<2 | (((unsigned char)table[code[i+1]])>>4); //取出第一个字符对应base64表的十进制数的前6位与第二个字符对应base64表的十进制数的后2位进行组合
+        res[j+1]=(((unsigned char)table[code[i+1]])<<4) | (((unsigned char)table[code[i+2]])>>2); //取出第二个字符对应base64表的十进制数的后4位与第三个字符对应bas464表的十进制数的后4位进行组合
+        res[j+2]=(((unsigned char)table[code[i+2]])<<6) | ((unsigned char)table[code[i+3]]); //取出第三个字符对应base64表的十进制数的后2位与第4个字符进行组合
+    }
+
+    return res;
+
 }
