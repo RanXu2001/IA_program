@@ -1,5 +1,5 @@
 //
-// Created by 16003 on 2022/5/31.
+// Created by 16003 on 2022/6/1.
 //
 #include <stdio.h> /* for printf() and fprintf() */
 #include <sys/socket.h> /* for socket(), sendto() and recvfrom() */
@@ -10,7 +10,6 @@
 #include <netdb.h>
 #include <fcntl.h>
 #include <dirent.h>
-
 int fd;
 char fileBuff[20000];
 unsigned char *base64_decode(unsigned char *code)
@@ -78,7 +77,7 @@ void decodeMailFile(char* mailName){
     currentMail = strstr(currentMail,"\n");
     // p1=p3;
 
-    if(currentMail[0]=='\n'){
+    if(currentMail[0]=='\n' && !(currentMail[1]=='D' && currentMail[2]=='a' && currentMail[3]=='t' && currentMail[4]=='e' && currentMail[5]==':')){
         memmove(currentMail, currentMail+1, strlen(currentMail));
     }
     endOfCurrentMail = strstr(currentMail,"\n");
@@ -97,85 +96,13 @@ void decodeMailFile(char* mailName){
     printf("%s",decodedContent);
 
 }
-int is_in(char *wenben, char *search_word)
-{
-    int i = 0, j = 0, flag = -1;
-    while (i < strlen(wenben) && j < strlen(search_word))
-    {
-        if (wenben[i] == search_word[j])
-        { //如果字符相同则两个字符都增加
-            i++;
-            j++;
-        }
-        else
-        {
-            i = i - j + 1; //主串字符回到比较最开始比较的后一个字符
-            j = 0;         //字串字符重新开始
-        }
-        if (j == strlen(search_word))
-        {             //如果匹配成功
-            flag = 1; //字串出现
-            break;
-        }
-    }
-    return flag;
-}
 
-int countFiles(){
-    int fileCount=0;
-    struct dirent *p;
-    //打开指定的文件夹
-    DIR *dirp=opendir("./");
-    if(dirp==NULL){
-        perror("opendir");
-        return 1;
-    }
-    //printf("directory open success..\n");
-    while((p=readdir(dirp))!=NULL) {
-        if (is_in(p->d_name, ".eml") == 1) // 调用函数：参数二：比较文本，参数一：原文本
-        {
-            fileCount++;
-        }
-    }
-    printf("you have %d mails\n", fileCount);
-    closedir(dirp);
-    return 0;
-}
 
-int selectAllemlforDetials(){
-    int hasCount=0;
-    struct dirent *p;
-    char result[200] = "VGhpcyBpcyB0ZXN0MSwgdGhlIHBsYWluIHRleHQgbWFpbC4=";
-    char *content;
-    char search[2000];
-    printf("Please in put the text you want to search:\n");
-    scanf("%s",search);
-    //打开指定的文件夹
-    DIR *dirp=opendir("./");
-    if(dirp==NULL){
-        perror("opendir");
-        return 1;
-    }
-    //printf("directory open success..\n");
-    countFiles();
-    while((p=readdir(dirp))!=NULL){
-        if (is_in(p->d_name, ".eml") == 1) // 调用函数：参数二：比较文本，参数一：原文本
-        {
-            content = base64_decode(result);
-            if(is_in(content,search) == 1){
-                hasCount++;
-                printf("The mail of %s has the text.\n",p->d_name);
-            }
-        }
-    }
-    printf("There is(are) %d mail(s) including the text.\n",hasCount);
-    //关闭文件夹
-    closedir(dirp);
-    return 0;
-}
+
 int main(){
-    char result[20000]="VGhpcyBpcyBhbiBlbWFpbCB3aXRoIGh0bWwuPGRpdj48YSBocmVmPSJodHRwczovL21haWwuYnVwdC5lZHUuY24vY2dpLWJpbi9mcmFtZV9odG1sP3NpZD1JNGk3dl9mNE5kaFBHalpVLDImYW1wO3NpZ25fdHlwZT0mYW1wO3I9MjRkYWI1MzZmN2I5MjQzOGYyMTQ5Yzc4YWUyYjY2MTMiPmh0bWw8L2E+PC9kaXY+";
-    printf("%s\n",base64_decode(result));
+    //char result[20000]="VGhpcyBpcyBhbiBlbWFpbCB3aXRoIGh0bWwuPGRpdj48YSBocmVmPSJodHRwczovL21haWwuYnVwdC5lZHUuY24vY2dpLWJpbi9mcmFtZV9odG1sP3NpZD1JNGk3dl9mNE5kaFBHalpVLDImYW1wO3NpZ25fdHlwZT0mYW1wO3I9MjRkYWI1MzZmN2I5MjQzOGYyMTQ5Yzc4YWUyYjY2MTMiPmh0bWw8L2E+PC9kaXY+";
+    //printf("%s\n",base64_decode(result));
     //selectAllemlforDetials();
+    decodeMailFile("online1.eml");
     return 0;
 }
