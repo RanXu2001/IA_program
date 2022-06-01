@@ -169,10 +169,11 @@ void Displaymainmenu()//显示主菜单
             }
 
             case 3:{
-                char* input = NULL;
+                char input[20];
                 printf("Please select the mail number you want to view:\n");
                 printf("mypop >");
                 scanf("%s", input);
+                strcat(input,"\n");
                 if(getMailDetail(input) < 0)
                     printf("getMailDetail() fail.\n");
                 memset(rcvBuff,0,sizeof(rcvBuff));
