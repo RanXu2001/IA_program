@@ -65,10 +65,12 @@ unsigned char *base64_decode(unsigned char *code);
 int main()
 {
     //TCP链接
+
     connectToServer();
     rcvFromServer();
     printf("%s",rcvBuff);
     memset(rcvBuff,0,sizeof(rcvBuff));
+    loginToSystem();
     //login
     switch (login())
     {
@@ -302,30 +304,33 @@ void loginToSystem(){
     new.c_lflag &= ~(ECHO|ICANON);
 
     char passwd_stdin[20]={0};
-    char passwd_true[]="111111";
     char ch;
     int i=0;
-
-
     printf("Please enter your username:\n");
+    printf("mypop>");
     scanf("%s",username);
-    printf("Please enter your password:");
+    getchar();
+    if(strcmp(username,USERNAME)!=0){
+        printf("Invalid username, please login again!");
+        exit(0);
+    }
+
+    printf("Please enter your password:\n");
     while(1)
     {
-        tcsetattr(0, TCSANOW, &new);//进入循环将stdin设置为不回显状态
-        scanf("%c",&ch);//在不回显状态下输入密码
-        tcsetattr(0, TCSANOW, &old);//每次输入一个密码的字符就恢复正常回显状态
-        if(i==20 || ch == '\n')//输入回车符表示密码输入完毕，退出循环；或者超出密码长度退出循环
+        tcsetattr(0, TCSANOW, &new);
+        scanf("%c",&ch);
+        tcsetattr(0, TCSANOW, &old);
+        if(i==20 || ch == '\n')
             break;
-        passwd_stdin[i] = ch;//将输入的单个字符依次存入数组中
+        passwd_stdin[i] = ch;
 
-        printf("*");//在回显状态下输出*
+        printf("*");
         i++;
     }
 
 
-
-    if(strcmp(username,USERNAME)&&strcmp(passwd_stdin,passwd_true)==0){
+    if(strcmp(passwd_stdin,PASSWORD)==0){
         printf("Password correct! You can login to mail system!");
     }
 
