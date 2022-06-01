@@ -1,0 +1,51 @@
+Received: from qq.com (unknown [59.36.132.88])
+	by mx91 (Coremail) with SMTP id ut1pCgAnHpUCIJdi+5G_AA--.30669S3;
+	Wed, 01 Jun 2022 16:14:58 +0800 (CST)
+X-QQ-GoodBg: 2
+X-QQ-SSF: 00410000000000F0
+X-QQ-FEAT: DTni/y8B878FFmYUkW64T3Bu/Wmf3UPKNrMKfyhsHzQ=
+X-QQ-BUSINESS-ORIGIN: 2
+X-Originating-IP: 221.219.50.181
+X-QQ-STYLE:
+X-QQ-mid: llogic71t1654071297t3354948
+From: "=?utf-8?B?MjAxOTIxMzAzOQ==?=" <2019213039@bupt.edu.cn>
+To: "=?utf-8?B?aWFfcG9wM19jbGllbnQ=?=" <ia_pop3_client@163.com>
+Subject: Online2
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_62972001_1D1753A8_3911CBC1"
+Content-Transfer-Encoding: 8Bit
+Date: Wed, 1 Jun 2022 16:14:57 +0800
+X-Priority: 3
+Message-ID: <tencent_159D4D310C8FD71A2188AFFD@qq.com>
+X-QQ-MIME: TCMime 1.0 by Tencent
+X-Mailer: QQMail 2.x
+X-QQ-Mailer: QQMail 2.x
+X-QQ-SENDSIZE: 520
+Received: from qq.com (unknown [127.0.0.1])
+	by smtp.qq.com (ESMTP) with SMTP
+	id ; Wed, 01 Jun 2022 16:14:57 +0800 (CST)
+Feedback-ID: llogic:bupt.edu.cn:qybgweb:qybgweb14
+X-CM-TRANSID:ut1pCgAnHpUCIJdi+5G_AA--.30669S3
+Authentication-Results: mx91; spf=none smtp.mail=2019213039@bupt.edu.c
+	n;
+X-Coremail-Antispam: 1Uf129KBjDUn29KB7ZKAUJUUUUU529EdanIXcx71UUUUU7v73
+	VFW2AGmfu7bjvjm3AaLaJ3UbIYCTnIWIevJa73UjIFyTuYvjxUfT5lUUUUU
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_62972001_1D1753A8_3911CBC1
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: base64
+
+VGhpcyBpcyBub3QgYSBwbGFpbiB0ZXh0IGVtYWlsLg==
+
+------=_NextPart_62972001_1D1753A8_3911CBC1
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: base64
+
+VGhpcyBpcyBub3QgYSBwbGFpbiB0ZXh0IGVtYWlsLg==
+
+------=_NextPart_62972001_1D1753A8_3911CBC1--
