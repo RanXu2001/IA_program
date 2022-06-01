@@ -307,7 +307,7 @@ void loginToSystem(){
     char ch;
     int i=0;
     printf("Please enter your username:\n");
-    printf("mypop>");
+    printf("mypop >");
     scanf("%s",username);
     getchar();
     if(strcmp(username,USERNAME)!=0){
@@ -316,6 +316,7 @@ void loginToSystem(){
     }
 
     printf("Please enter your password:\n");
+    printf("mypop >");
     while(1)
     {
         tcsetattr(0, TCSANOW, &new);
@@ -404,7 +405,7 @@ int downloadDelete(char *i){
     strcat(str, i);
     char fileName[100];
     printf("Enter the file name you want to save as:\n");
-    printf("mypop>");
+    printf("mypop >");
     scanf("%s",fileName);
     strcat(fileName,".eml");
 
