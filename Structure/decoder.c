@@ -9,6 +9,9 @@
 #include <unistd.h> /* for close() */
 #include <netdb.h>
 #include <fcntl.h>
+
+int fd;
+char fileBuff[20000];
 unsigned char *base64_decode(unsigned char *code)
 {
 //根据base64表，以字符找到对应的十进制数据
@@ -54,8 +57,52 @@ unsigned char *base64_decode(unsigned char *code)
     return res;
 
 }
+int readFile(char* fliename){
+    if((fd = open(fliename,O_RDONLY,0))==-1)
+        return -1;
 
+    int i = read(fd,fileBuff,sizeof(fileBuff));
+    close(fd);
+    return i;
+}
+void decodeMailFile(char* mailName){
+    const char* base64Head = "Content-Transfer-Encoding: base64";
+    unsigned char content[20000];
+    char *decodedContent;
+    readFile(mailName);
+    char *currentMail;
+    char *endOfCurrentMail;
+    currentMail = fileBuff;
+    currentMail = strstr(currentMail,base64Head);
+    currentMail = strstr(currentMail,"\n");
+    // p1=p3;
+
+    if(currentMail[0]=='\n'){
+        memmove(currentMail, currentMail+1, strlen(currentMail));
+    }
+    endOfCurrentMail = strstr(currentMail,"\n");
+
+    memcpy(content,currentMail,(strchr(currentMail,'-')-currentMail-1));
+    // for(;*currentMail!='\n';*currentMail++,*p2++){
+    //     *p2 = *currentMail;
+    // }
+    // printf("%s",content);
+    unsigned char*str = content;
+    if(str[0]=='\n'){
+        memmove(str, str+1, strlen(str));
+    }
+    printf("%s",str);
+    decodedContent = base64_decode(str);
+    printf("%s",decodedContent);
+
+
+
+
+
+
+}
 int main(){
-    printf("");
+    char result[200]="VGhpcyBpcyB0ZXN0MSwgdGhlIHBsYWluIHRleHQgbWFpbC4=";
+    printf("%s\n",base64_decode(result));
     return 0;
 }
