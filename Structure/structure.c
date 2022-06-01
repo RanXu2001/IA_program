@@ -10,12 +10,15 @@
 #include <netdb.h>
 #include <fcntl.h>
 #include <dirent.h>
+#include <termios.h>
 
 #define FILE_MODE 0777
 #define IP_LEN	64
 FILE *f1;
 int fd;
 int sock;
+const char* USERNAME = "IA_pop3_client";
+const char* PASSWORD = "111111";
 
 struct sockaddr_in serverSockAddr; /* server address */
 struct sockaddr_in clientSockAddr; /* client address */
@@ -34,6 +37,7 @@ const unsigned short servPort = 110;
 
 
 void Displaymainmenu();//显示主菜单
+void loginToSystem();
 int getList();//Get a list of messages and sizes  success:0,fail:-1
 int getMailStatus();//Get mail status             success:0,fail:-1
 int getMailDetail(char *);//Display mail in detail      success:0,fail:-1
@@ -61,6 +65,7 @@ unsigned char *base64_decode(unsigned char *code);
 int main()
 {
     //TCP链接
+    loginToSystem();
     connectToServer();
     rcvFromServer();
     printf("%s",rcvBuff);
@@ -287,6 +292,51 @@ int connectToServer(){//成功返回0，失败返-1
     else
         printf("Connect to server successfully!\n");
     return 1;
+}
+void loginToSystem(){
+    char username[30];
+    // int i = 0;
+    struct termios old,new;
+    tcgetattr(0,&old);
+    new = old;
+    new.c_lflag &= ~(ECHO|ICANON);
+
+    char passwd_stdin[20]={0};
+    char passwd_true[]="111111";
+    char ch;
+    int i=0;
+
+
+
+
+    printf("Please enter your username:\n");
+    scanf("%s",username);
+    printf("Please enter your password:");
+    while(1)
+    {
+        tcsetattr(0, TCSANOW, &new);//进入循环将stdin设置为不回显状态
+        scanf("%c",&ch);//在不回显状态下输入密码
+        tcsetattr(0, TCSANOW, &old);//每次输入一个密码的字符就恢复正常回显状态
+        if(i==20 || ch == '\n')//输入回车符表示密码输入完毕，退出循环；或者超出密码长度退出循环
+            break;
+        passwd_stdin[i] = ch;//将输入的单个字符依次存入数组中
+
+        printf("*");//在回显状态下输出*
+        i++;
+    }
+
+
+
+    if(strcmp(username,USERNAME)&&strcmp(passwd_stdin,passwd_true)==0){
+        printf("Password correct! You can login to mail system!");
+    }
+
+    else{
+        printf("Your username and password don't match!");
+        exit(0);
+    }
+
+
 }
 
 int sendToServer(char *message){
