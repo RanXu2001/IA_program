@@ -310,11 +310,13 @@ void loginToSystem(){
 
 
     printf("Please enter your username:\n");
+    printf("mypop >");
     scanf("%s",username);
     printf("Please enter your password:");
     while(1)
     {
         tcsetattr(0, TCSANOW, &new);//进入循环将stdin设置为不回显状态
+        printf("mypop >");
         scanf("%c",&ch);//在不回显状态下输入密码
         tcsetattr(0, TCSANOW, &old);//每次输入一个密码的字符就恢复正常回显状态
         if(i==20 || ch == '\n')//输入回车符表示密码输入完毕，退出循环；或者超出密码长度退出循环
